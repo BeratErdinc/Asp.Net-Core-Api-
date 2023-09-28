@@ -1,4 +1,5 @@
 ﻿using HotelProject.BusinessLayer.Abstract;
+using HotelProject.DataAccessLayer.Abstract;
 using HotelProject.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,32 @@ namespace HotelProject.BusinessLayer.Concrete
 {
     public class RoomManager : IRoomService
     {
+        private readonly IRoomDal roomda;
+        public RoomManager(IRoomDal roomService) { roomda = roomService; }
         public void TDelete(Room t)
         {
-            throw new NotImplementedException();
+            roomda.Delete(t);
+
         }
 
         public Room TGetById(int id)
         {
-            throw new NotImplementedException();
+            return roomda.GetById(id);
         }
 
         public List<Room> TGetList()
         {
-            throw new NotImplementedException();
+            return roomda.GetList();
         }
 
         public void TInsert(Room t)
         {
-            throw new NotImplementedException();
+            roomda.Insert(t);
         }
 
         public void TUpdate(Room t)
         {
-            throw new NotImplementedException();
+            roomda.Update(t);
         }
     }
 }
