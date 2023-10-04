@@ -9,37 +9,37 @@ using System.Threading.Tasks;
 
 namespace HotelProject.BusinessLayer.Concrete
 {
-    public class ServiceManager : ISubscribeService
+    public class ServiceManager : IServicesService
     {
-        private readonly ISubscribeDal _subscribeDal;
-        public ServiceManager(ISubscribeDal subscribeDal)
+        private readonly IServicesDal _ServicesDal;
+        public ServiceManager(IServicesDal ServicesDal)
         {
-            _subscribeDal = subscribeDal;
+            _ServicesDal = ServicesDal;
         }
 
-        public void TDelete(Subscribe t)
+        public void TDelete(Service t)
         {
-            _subscribeDal.Delete(t);
+            _ServicesDal.Delete(t);
         }
 
-        public Subscribe TGetById(int id)
+        public Service TGetById(int id)
         {
-           return _subscribeDal.GetById(id);
+            return _ServicesDal.GetById(id);
         }
 
-        public List<Subscribe> TGetList()
+        public List<Service> TGetList()
         {
-            return _subscribeDal.GetList();
+            return _ServicesDal.GetList();
         }
 
-        public void TInsert(Subscribe t)
+        public void TInsert(Service t)
         {
-            _subscribeDal.Insert(t);
+            _ServicesDal.Insert(t);
         }
 
-        public void TUpdate(Subscribe t)
+        public void TUpdate(Service t)
         {
-            _subscribeDal.Update(t);
+            _ServicesDal.Update(t);
         }
     }
 }

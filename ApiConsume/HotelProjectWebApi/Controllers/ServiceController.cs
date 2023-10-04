@@ -9,10 +9,10 @@ namespace HotelProjectWebApi.Controllers
     [ApiController]
     public class ServiceController : ControllerBase
     {
-        private readonly IServiceService _serviceService;
-        public ServiceController(IServiceService ServiceService)
+        private readonly IServicesService _serviceService;
+        public ServiceController(IServicesService serviceService)
         {
-            this._serviceService = ServiceService;
+            _serviceService = serviceService;
         }
 
         [HttpGet]
@@ -33,6 +33,7 @@ namespace HotelProjectWebApi.Controllers
         public IActionResult DeleteService(int id)
         {
             var values = _serviceService.TGetById(id);
+            _serviceService.TDelete(values);
             return Ok();
 
         }

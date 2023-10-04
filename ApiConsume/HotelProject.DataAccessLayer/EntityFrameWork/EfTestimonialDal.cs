@@ -12,6 +12,6 @@ namespace HotelProject.DataAccessLayer.EntityFrameWork
 {
     public class EfTestimonialDal:GenericRepositories<Testimonial>,ITestimonialDal
     {
-        EfTestimonialDal(Context context) : base(context) { }
+       public EfTestimonialDal(Context context) : base(context) { }
     }
 }
