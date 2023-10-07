@@ -33,7 +33,7 @@ builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 builder.Services.AddScoped<IServicesDal, EfServiceDal>();
 builder.Services.AddScoped<IServicesService, ServiceManager>();
 
-
+builder.Services.AddAutoMapper(typeof(Program)); 
 
 builder.Services.AddSwaggerGen(c =>
 {
